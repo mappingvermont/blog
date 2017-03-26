@@ -1,0 +1,23 @@
+WEBSITE NOTES
+
+(or, what a pain in the ass it is to setup/configure a website)
+
+Most of the content is here:
+	~/Proj-15/Jekyll/_site
+
+Other content is here:
+	/home/charlie/wwwroot/wwwroot/projects
+
+	This is the content that isn't processed by Jekyll. I should move this to the Jekyll folder somehow . . . one day I will
+
+Once you copy everything over to a new host, you need to install PHP5 to get the sanborn map .mbtiles to work
+After that, you need to install the PHP5-sqlite extension, likely like so:
+ apt-get install php5-sqlite
+
+If that doesn't work, follow up here:
+http://stackoverflow.com/questions/948899/how-to-enable-sqlite3-for-php#comment38872720_948954
+
+
+A complete archive of the website (well, at somepoint anyway) is available in /home/charlie/wwwroot/wwroot/.
+
+Great. Never again.
