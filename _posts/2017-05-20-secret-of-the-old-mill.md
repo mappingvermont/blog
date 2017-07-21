@@ -3,12 +3,12 @@ layout: post
 category : web
 tags : [beers, mapnik, history]
 title: The Secret of the Old Mill
-description: "The Economic Geography of Cambridgeport in 1869"
+description: "The economic geography of Cambridgeport in 1869"
 ---
 
 A few years ago my dad gave me a replica of the [1869 Beers map of Grafton](http://shop.old-maps.com/vermont/towns/windham-co-vt-1869-town/grafton-vermont-1869-old-town-map-reprint-windham-co/). I've had it framed on my wall ever since. It's nice to see the familiar names of old Grafton (the Culvers, Fishers, Whitcombs, Wrights), many of whose descendants live there today.\\
 \\
-It's also nice to see Grafton near it's demographic and industrial peak-- soapstone quarries in full production, saw mills on the Saxtons River and many school houses spread across town. There's also an inset of Cambridgeport:\\
+It's also nice to see Grafton near its demographic and industrial peak-- soapstone quarries in full production, saw mills on the Saxtons River and many school houses spread across town. There's also an inset of Cambridgeport:\\
 \\
 ![Beers Cambrigeport 1869]({{ site.url }}/images/beers-cambridgeport-1869.jpg)
 *Image courtesy of [old-maps.com](http://old-maps.com)*\\
