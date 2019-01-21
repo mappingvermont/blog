@@ -11,4 +11,4 @@ I started with a [CSV of all addresses](https://github.com/mappingvermont/holida
 \\
 The final code is up on [GitHub](https://github.com/mappingvermont/holidayCards). See the link below for the map:\\
 \\
-[Mapping Holiday Cards](http://www.mappingvermont.org/projects/holiday-cards)
+[Mapping Holiday Cards](https://www.mappingvermont.org/projects/holiday-cards)

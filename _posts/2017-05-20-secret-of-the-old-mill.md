@@ -21,6 +21,6 @@ What didn't make sense, however, was the length of the race way to bring water t
 \\
 Luckily, [VCGI](http://vcgi.vermont.gov) has a LiDAR image service perfect for this type of investigation. Dave Allen of [old-maps.com](http://old-maps.com) was happy to provide a high-res scan of the image, and I quickly got to work, georeferencing the historic map and comparing it to the image service. Here's a comparison of the historic map to today's LiDAR hillshade:\\
 \\
-[http://www.mappingvermont.org/projects/cambridgeport-mill-analysis/](http://www.mappingvermont.org/projects/cambridgeport-mill-analysis/)\\
+[https://www.mappingvermont.org/projects/cambridgeport-mill-analysis/](https://www.mappingvermont.org/projects/cambridgeport-mill-analysis/)\\
 \\
-Looking at the LiDAR data, I can't find much evidence for the old race way. The usual stone walls are visible, but no sign of a trench that follows what appears on the map. This [spooky skull-like formation](http://www.mappingvermont.org/projects/cambridgeport-mill-analysis/#19/43.15299/-72.55950) was the closest I found to any irregularity. I'd like to investigate this further, particularly the area where the canal begins near the saw mill. If I discover anything, you can find it here on MappingVermont! 
+Looking at the LiDAR data, I can't find much evidence for the old race way. The usual stone walls are visible, but no sign of a trench that follows what appears on the map. This [spooky skull-like formation](https://www.mappingvermont.org/projects/cambridgeport-mill-analysis/#19/43.15299/-72.55950) was the closest I found to any irregularity. I'd like to investigate this further, particularly the area where the canal begins near the saw mill. If I discover anything, you can find it here on MappingVermont! 

@@ -22,7 +22,7 @@ I have worked hard as Governor to improve life for Vermonters in these
 still-difficult times.
 {% endhighlight %}
 
-I decided to take a look at the use of "Vermonters" in every inaugural address, beginning with Thomas Chittenden in 1779, and compare it to the total words used by each Governor (Chittenden's 1779 stats: 835 words, 0 "Vermonters"). The Secretary of State has a great [archive](https://www.sec.state.vt.us/archives-records/state-archives/government-history/inaugurals-and-farewells/table-of-addresses.aspx) of these addresses (unfortunately all in PDF), and so I wrote a Python script to download it and convert them to text. For those interested, the text files are available [here](http://www.mappingvermont.org/data/inauguraladdresses).\\
+I decided to take a look at the use of "Vermonters" in every inaugural address, beginning with Thomas Chittenden in 1779, and compare it to the total words used by each Governor (Chittenden's 1779 stats: 835 words, 0 "Vermonters"). The Secretary of State has a great [archive](https://www.sec.state.vt.us/archives-records/state-archives/government-history/inaugurals-and-farewells/table-of-addresses.aspx) of these addresses (unfortunately all in PDF), and so I wrote a Python script to download it and convert them to text. For those interested, the text files are available [here](https://www.mappingvermont.org/data/inauguraladdresses).\\
 \\
 I used the NLTK package to count the occurrence of "Vermonter" or "Vermonters" in each document, with the big winner being Jim Douglas, whose 2007 address used the word 33 times. Here's my favorite sentence from his speech:
 
@@ -150,7 +150,7 @@ d3.helper.tooltip = function(){
 var data = [];
 var values = [];
 
-d3.csv("http://www.mappingvermont.org/data/inauguraladdresses/wordcount.csv", function(csvData) {
+d3.csv("https://www.mappingvermont.org/data/inauguraladdresses/wordcount.csv", function(csvData) {
 //d3.csv("http://localhost:4000/data/inauguraladdresses/wordcount.csv", function(csvData) {
 
   csvData.forEach(function(d) {

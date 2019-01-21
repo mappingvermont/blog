@@ -17,4 +17,4 @@ Opened as Engine 4 Sep. 12, 1940. Engine 4 relocated to 2531 Sherman Ave. NW
 on Oct. 22, 1976. 
 {% endhighlight %}
 I've mapped Mike's work, including photos and descriptions,  here:\\
-[http://www.mappingvermont.org/projects/dc-fire-stations/](http://www.mappingvermont.org/projects/dc-fire-stations/)
+[https://www.mappingvermont.org/projects/dc-fire-stations/](https://www.mappingvermont.org/projects/dc-fire-stations/)

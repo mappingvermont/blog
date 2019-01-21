@@ -13,7 +13,7 @@ Instead of tallying statewide totals, I wanted to see what the most common road 
 It's always interesting to use GIS data in an unconventional way. Instead of actually mapping the road segments, I'm just using the DBF table as a database. The only geographically relevant information is that each road is associated with a town. It requires a little bit of grouping by road name and town to get individual combinations given the multiple segments each road has in GIS, but it's much easier than asking VTrans for an official list. The code is here on GitHub-- lots of python and sqlite: [https://github.com/mappingvermont/vt-road-names](https://github.com/mappingvermont/vt-road-names)\\
 \\
 After tallying these stats by town, I joined them to town boundaries:\\
-[www.mappingvermont.org/projects/vt-road-names](http://www.mappingvermont.org/projects/vt-road-names)\\
+[www.mappingvermont.org/projects/vt-road-names](https://www.mappingvermont.org/projects/vt-road-names)\\
 \\
 Fun stuff! Such classic Vermont road names-- lots of Hill, Brook, Old, and Hollow. I love that nearly all the towns in the center of the state have Hill as their most common word, with the occasional Brook thrown in for good measure. There aren't as many hills in the Champlain Valley, of course, so the most common word varies -- some Bay, Shore, and Point suggest proximity to the lake.\\
 \\

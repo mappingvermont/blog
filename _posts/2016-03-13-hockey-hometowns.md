@@ -10,6 +10,6 @@ I'm not much of a hockey fan, but my buddy [Bob Fitch](https://bobsbreakdowns.wo
 \\
 Per always, I put together a [python script](https://github.com/mappingvermont/nhl-birthplaces/blob/master/geocodeBirthplace.py) to geocode these towns using Google's geocoder. I wrote the output to a bunch of [geoJSON files](https://github.com/mappingvermont/nhl-birthplaces/tree/master/outGeoJSON)- both team-specific and all players in the NHL. From here I put this data into in my standard mapping template, and added a filter to allow users to show/hide data by team.\\
 \\
-Here's the application: [http://www.mappingvermont.org/projects/nhl-birthplaces](http://www.mappingvermont.org/projects/nhl-birthplaces)\\
+Here's the application: [https://www.mappingvermont.org/projects/nhl-birthplaces](https://www.mappingvermont.org/projects/nhl-birthplaces)\\
 \\
 Unfortunately there are no current NHL players from VT, but we do have the immortal [John LeClair](https://en.wikipedia.org/wiki/John_LeClair) to our credit. Next up, we'll look through [Sean Lahman's baseball database](http://www.seanlahman.com/baseball-archive/statistics/) for evidence of Vermont atheletic prowess.

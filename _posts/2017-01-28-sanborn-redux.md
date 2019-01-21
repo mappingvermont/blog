@@ -12,9 +12,9 @@ Unlike my previous work with the 1915 Sanborn map of Montpelier, these maps are 
 \\
 In addition to expanding the geographic coverage of the maps, I've improved the method of tile generation. I've got a better sense now of the proper export resolution for the maps, and am using Mapnik directly to render the tiles. Both combine to make a much better output, most clearly seen in the handwriting at high zoom levels.\\
 \\
-I've also built a little [Node application](http://www.github.com/mappingvermont/sanborn-vt) to create links to specific towns. The link [http://www.mappingvermont.org/projects/sanborn/saxtons-river](http://www.mappingvermont.org/projects/sanborn/saxtons-river) will redirect users to the zoom level and location appropriate for Saxtons River, using the wonderful [leaflet-hash](https://github.com/mlevans/leaflet-hash) library.\\
+I've also built a little [Node application](http://www.github.com/mappingvermont/sanborn-vt) to create links to specific towns. The link [https://www.mappingvermont.org/projects/sanborn/saxtons-river](https://www.mappingvermont.org/projects/sanborn/saxtons-river) will redirect users to the zoom level and location appropriate for Saxtons River, using the wonderful [leaflet-hash](https://github.com/mlevans/leaflet-hash) library.\\
 \\
-Hopefully this will make it easier to share maps, and can also be used to link directly to interesting locations, like this "Chine laundry" in the basement of the old Oona's building in Bellows Falls: [http://www.mappingvermont.org/projects/sanborn/#21/43.13454/-72.44476](http://www.mappingvermont.org/projects/sanborn/#21/43.13454/-72.44476)\\
+Hopefully this will make it easier to share maps, and can also be used to link directly to interesting locations, like this "Chine laundry" in the basement of the old Oona's building in Bellows Falls: [https://www.mappingvermont.org/projects/sanborn/#21/43.13454/-72.44476](https://www.mappingvermont.org/projects/sanborn/#21/43.13454/-72.44476)\\
 \\
 Like my work with Montpelier, I'm also looking for historic images for these maps. If you know of photos of Bellows Falls, Saxtons River or Springfield from the 1890s, please be in touch!
 

@@ -30,4 +30,4 @@ September 2nd, 1911.
 \\
 See below for a link to the map of the state's historic markers. Feel free to comment if any locations are wrong, or if you discover any errors in the text.\\
 \\
-[Vermont's Historic Sites](http://www.mappingvermont.org/projects/vermont-historic-sites)
+[Vermont's Historic Sites](https://www.mappingvermont.org/projects/vermont-historic-sites)

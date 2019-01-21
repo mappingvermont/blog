@@ -20,4 +20,4 @@ user management and was off to the races.
 The rest, as they say is history. If you're interested, please create a profile here and start tracking your progress:
 \\
 \\
-[www.mappingvermont.org/projects/vt-town-tracker/](http://www.mappingvermont.org/projects/vt-town-tracker/)
+[www.mappingvermont.org/projects/vt-town-tracker/](https://www.mappingvermont.org/projects/vt-town-tracker/)
