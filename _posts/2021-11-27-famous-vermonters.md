@@ -6,10 +6,10 @@ title: Famous Vermonters
 description: "Ranking the people that have called Vermont home"
 ---
 
-It's been about four years since I've written here, and a lot has changed. My wife and I were married in July 2019, and we welcomed our daughter in April 2021. What a whirlwind! We like to keep the focus on mapping and Vermont here at this site, but I do feel very lucky and proud of our little family ❤️
-
-We've also just moved back to the state (July 2021) and I've got a million blog post ideas. I'll start with a straightforward one- who's the most famous Vermonter ever? Ethan Allen? Bernie Sanders? Calvin Coolidge? John Deere? John LeClair?
-
+It's been about four years since I've written here, and a lot has changed. My wife and I were married in July 2019, and we welcomed our daughter in April 2021. What a whirlwind! We like to keep the focus on mapping and Vermont here at this site, but I do feel very lucky and proud of our little family ❤️\\
+\\
+We've also just moved back to the state (July 2021) and I've got a million blog post ideas. I'll start with a straightforward one- who's the most famous Vermonter ever? Ethan Allen? Bernie Sanders? Calvin Coolidge? John Deere? John LeClair?\\
+\\
 And how do you define famous? And the classic question- how do you decide who is a _Vermonter_? I'm going to rely on wikipedia to enforce both of these standards. It's a little dubious, but we need some help:
 
 - 'Famous' will be defined using [qrank](https://github.com/brawer/wikidata-qrank), a ranking system using wikipedia pageviews
@@ -18,90 +18,19 @@ And how do you define famous? And the classic question- how do you decide who is
 
 ## Pulling the data
 
-I used the incredible npm [wtf_wikipedia](https://github.com/spencermountain/wtf_wikipedia) package to pull down the Famous Vermonters data. The package made it really easy to pull in this data- letting me poke at it in a node REPL until I had it working correctly. To match each famous vermonter to their respective `qrank`, I then queried the wikipedia API to get their wikidata ID, then wrote the output to a CSV. As a node n00b it probably took me three full hours to get the async stuff right. I tried it all- requests, promises, request-promises, you name it.
+I used the incredible npm [wtf_wikipedia](https://github.com/spencermountain/wtf_wikipedia) package to pull down the Famous Vermonters data. The package made it really easy to pull in this data- letting me poke at it in a node REPL until I had it working correctly. To match each famous vermonter to their respective `qrank`, I then queried the wikipedia API to get their wikidata ID, then wrote the output to a CSV. As a node n00b it probably took me three full hours to get the async stuff right. I tried it all- requests, promises, request-promises, you name it.\\
+\\
+Here's [the code](https://gist.github.com/mappingvermont/e744eca4308d2bd8b20e032054dc7ea6) to build a CSV of Famous Vermonter and their wikidata IDs in case you want to follow along at home.
 
-<details><summary>Here's the code to build a CSV of Famous Vermonter and their wikidata IDs</summary>
-
-
-```js
-const wtf = require('wtf_wikipedia')
-const rp = require('request-promise');
-const createCsvWriter = require('csv-writer').createObjectCsvWriter;
-
-const csvWriter = createCsvWriter({
-    path: 'famous_vermonters.csv',
-    header: [
-      {id: 'qid', title: 'qid'},
-      {id: 'name', title: 'name'}
-    ]
-});
-
-function parseWikiResponse(resp) {
-    var firstPage = Object.values(resp.query.pages)[0]
-
-    if ('pageprops' in firstPage) {
-        return firstPage.pageprops.wikibase_item
-    } else {
-        return null
-    }
-
-}
-
-function getNamesAndQids() {
-    var vermonters = []
-    var ps = []
-
-    wtf.fetch('List_of_people_from_Vermont').then((doc) => {
-        console.log("RUNNING")
-        doc.json().sections.map((section) => {
-
-
-            if (/^[A-Z]$/.test(section.title)) {
-                var section_list = [].concat.apply([], section.lists);
-
-                section_list.map((item) => {
-
-                    var wikiURL = encodeURI(`https://en.wikipedia.org/w/api.php?action=query&prop=pageprops&titles=${item.links[0].page}&format=json`)
-                    vermonters.push(item.text)
-                    ps.push(rp({
-                        uri: wikiURL,
-                        json: true
-                    }))
-                })
-
-            }
-        })
-
-        // https://stackoverflow.com/a/39507833/4355916
-        return Promise.all(ps)
-            .then((results) => {
-                csvWriter.writeRecords(results.map((e, i) => (
-                    {
-                        "name": vermonters[i],
-                        "qid": parseWikiResponse(e)
-                    })))
-            }).catch(err => console.log(err))
-    })
-}
-
-getNamesAndQids()
-```
-
-
-</details>
 
 ## Importing it into SQL
 
-<details><summary>Here's the code to import the Famous Vermonters CSV into postgres</summary>
+And to import the Famous Vermonters CSV into postgres:
 
 ```sql
 create table vermonters (qid text, name text);
 \COPY vermonters(qid, name) from 'famous_vermonters.csv' DELIMITER ',' CSV HEADER;
-
-
 ```
-
-</details>
 
 I did some similar with the qrank dataset, but have misplaced that code. It's a pretty straightforward CSV --> postgres import.
 
@@ -111,13 +40,11 @@ I did some similar with the qrank dataset, but have misplaced that code. It's a 
 OK, now we've got our famous vermonters CSV and the ranking for all wikidata entries . . . let's join them 🎉
 
 ```sql
-
 select distinct on (qrank, qid) name, qrank
 from vermonters a,
   qrank b
 where a.qid = b.entity
 order by qrank desc, qid;
-
 ```
 
 ## And the winner is . . . 🥁🥁🥁
@@ -125,18 +52,18 @@ order by qrank desc, qid;
 Now bear in mind that this is purely a ranking of how many times folks have clicked on this person's wikipedia page. And this person didn't even really grow up in Vermont. And . . . ok here are the final rankings:
 
 
-|rank | name | qrank|
-|---:|---|-----|
-|1 | Ted Bundy (1946–1989), serial killer; born in Burlington | 12098835|
-|2| Bernie Sanders, politician, Vermont Senator since 2007 |  5997027|
-|3| Calvin Coolidge, 30th President of the United States; born in Plymouth Notch |  2338343|
-|4| Rudyard Kipling, British author; resident of Brattleboro when he wrote The Jungle Book  |  2085495|
-|5| Aleksandr Solzhenitsyn, Russian author, recipient, 1970 Nobel Prize for Literature |  1908792|
-|6| Randy Quaid, actor |  1868975|
-|7| Felicity Huffman, actress; attended school in Putney |  1858119|
-|8| Louise Glück, Pulitzer Prize-winning poet |  1609669|
-|9| Joseph Smith (1805–1844), founder of Latter Day Saint movement; born in Sharon |  1577037|
-|10 | Joanna 'JoJo' Levesque, singer, actress; born in Brattleboro   |  1537455|
+| name | qrank|
+|---|-----|
+| Ted Bundy (1946–1989), serial killer; born in Burlington | 12098835|
+| Bernie Sanders, politician, Vermont Senator since 2007 |  5997027|
+| Calvin Coolidge, 30th President of the United States; born in Plymouth Notch |  2338343|
+| Rudyard Kipling, British author; resident of Brattleboro when he wrote The Jungle Book  |  2085495|
+| Aleksandr Solzhenitsyn, Russian author, recipient, 1970 Nobel Prize for Literature |  1908792|
+| Randy Quaid, actor |  1868975|
+| Felicity Huffman, actress; attended school in Putney |  1858119|
+| Louise Glück, Pulitzer Prize-winning poet |  1609669|
+| Joseph Smith (1805–1844), founder of Latter Day Saint movement; born in Sharon |  1577037|
+| Joanna 'JoJo' Levesque, singer, actress; born in Brattleboro   |  1537455|
 
 ## What's next?
 
