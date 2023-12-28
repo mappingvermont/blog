@@ -13,4 +13,4 @@ I grew up listening to this music. My dad is a big country fan, and we'd listen 
 \\
 After discovering the [Honky Tonk Tuesday archive](http://www.honkytonktuesday.com/), I used python to scrape the setlist from each recording, then used SQL to count each time a particular song had been played. I then found the original artist for each song, and recorded their birthplace. Finally (and this gets to the mapping part) I totaled the number of times the Honky Tonk Tuesday band had played each artist, and drew a corresponding point on a map. More on the python scraping and geocoding in later posts, the map is here:\\
 \\
-[http://mappingvermont.org/projects/htt/](http://mappingvermont.org/projects/htt/)  
+[http://mappingvermont.org/projects/htt/](/projects/htt/)

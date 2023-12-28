@@ -10,24 +10,24 @@ Living in Vermont is kind of a big deal. Of those that make this choice, the vas
 I'm as proud of this appellation as anyone, but lately I've been feeling like it's a bit over-used. Hearing Governor Shumlin's recent address  brought this to my attention, his nasal tone invoking our collective identity three times in the first five sentences:
 
 {% highlight css %}
-Mr. President, Mr. Speaker, members of the General Assembly, distinguished guests, 
+Mr. President, Mr. Speaker, members of the General Assembly, distinguished guests,
 and fellow Vermonters:
 
-Thank you for the tremendous honor and opportunity to serve again as Governor. 
-As a Vermonter who grew up, raised my daughters, and built two businesses here, it 
-is the greatest privilege of my life to give back to the state that has given me 
+Thank you for the tremendous honor and opportunity to serve again as Governor.
+As a Vermonter who grew up, raised my daughters, and built two businesses here, it
+is the greatest privilege of my life to give back to the state that has given me
 so much. I love serving as Governor because I love Vermont.
 
-I have worked hard as Governor to improve life for Vermonters in these 
+I have worked hard as Governor to improve life for Vermonters in these
 still-difficult times.
 {% endhighlight %}
 
-I decided to take a look at the use of "Vermonters" in every inaugural address, beginning with Thomas Chittenden in 1779, and compare it to the total words used by each Governor (Chittenden's 1779 stats: 835 words, 0 "Vermonters"). The Secretary of State has a great [archive](https://www.sec.state.vt.us/archives-records/state-archives/government-history/inaugurals-and-farewells/table-of-addresses.aspx) of these addresses (unfortunately all in PDF), and so I wrote a Python script to download it and convert them to text. For those interested, the text files are available [here](https://www.mappingvermont.org/data/inauguraladdresses).\\
+I decided to take a look at the use of "Vermonters" in every inaugural address, beginning with Thomas Chittenden in 1779, and compare it to the total words used by each Governor (Chittenden's 1779 stats: 835 words, 0 "Vermonters"). The Secretary of State has a great [archive](https://www.sec.state.vt.us/archives-records/state-archives/government-history/inaugurals-and-farewells/table-of-addresses.aspx) of these addresses (unfortunately all in PDF), and so I wrote a Python script to download it and convert them to text. For those interested, the text files are available [here](/data/inauguraladdresses).\\
 \\
 I used the NLTK package to count the occurrence of "Vermonter" or "Vermonters" in each document, with the big winner being Jim Douglas, whose 2007 address used the word 33 times. Here's my favorite sentence from his speech:
 
 {% highlight css %}
-I have warmed the thin hands of older Vermonters, their eyes still sparkling 
+I have warmed the thin hands of older Vermonters, their eyes still sparkling
 between deep gray granite lines of age.
 {% endhighlight %}
 
@@ -79,7 +79,7 @@ I also wanted to see how these trends played out over time. I wrote the results 
   shape-rendering: crispEdges;
 }
 </style>
-<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="https://d3js.org/d3.v3.min.js"></script>
 <script>
 d3.helper = {};
 
@@ -98,7 +98,7 @@ d3.helper.tooltip = function(){
                            .attr('class', 'tooltip')
             var absoluteMousePos = d3.mouse(bodyNode);
             tooltipDiv.style({
-				
+
                 left: (absoluteMousePos[0])+'px',
                 top: (absoluteMousePos[1])+'px',
                 'background-color': '#d8d5e4',
@@ -150,11 +150,11 @@ d3.helper.tooltip = function(){
 var data = [];
 var values = [];
 
-d3.csv("https://www.mappingvermont.org/data/inauguraladdresses/wordcount.csv", function(csvData) {
-//d3.csv("http://localhost:4000/data/inauguraladdresses/wordcount.csv", function(csvData) {
+
+d3.csv("/data/inauguraladdresses/wordcount.csv", function(csvData) {
 
   csvData.forEach(function(d) {
- 
+
 	data.push({
 	index: +d.UniqueID,
     year: +d.Year,
@@ -164,9 +164,9 @@ d3.csv("https://www.mappingvermont.org/data/inauguraladdresses/wordcount.csv", f
     numvermonters: +d.Numberofvermonters,
     pcttotal: parseFloat(d.Pctwords)
 	});
-	
+
 	values.push(+d.Totalwords);
-	
+
   });
   buildChart(data);
 })
@@ -246,7 +246,7 @@ function buildChart(inputData){
 	  new_click_event.clientY = d3.event.clientY;
 	  brush_elm.dispatchEvent(new_click_event);
 	});
-		
+
 	function brushmove() {
 	  var extent = brush.extent();
 	  points.classed("selected", function(d) {
