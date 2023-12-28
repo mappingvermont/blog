@@ -10,4 +10,4 @@ image:
   creditlink: http://guides.middlebury.edu/vermontiana
 ---
 
-[Inaugural addresses of Vermont's governors, converted to text files](http://www.mappingvermont.org/data/inauguraladdresses/)
+[Inaugural addresses of Vermont's governors, converted to text files](/data/inauguraladdresses/)
