@@ -10,7 +10,7 @@ A few years ago my dad gave me a replica of the [1869 Beers map of Grafton](http
 \\
 It's also nice to see Grafton near its demographic and industrial peak-- soapstone quarries in full production, saw mills on the Saxtons River and many school houses spread across town. There's also an inset of Cambridgeport:\\
 \\
-![Beers Cambrigeport 1869]({{ site.url }}/images/beers-cambridgeport-1869.jpg)
+![Beers Cambrigeport 1869](/images/beers-cambridgeport-1869.jpg)
 *Image courtesy of [old-maps.com](http://old-maps.com)*\\
 \\
 I didn't pay very much attention to this at first, other than to pick out the familiar names of elementary school classmates (Aikens, Wymans). After all, not much has changed in these villages in the last 150 years.\\
@@ -21,6 +21,6 @@ What didn't make sense, however, was the length of the race way to bring water t
 \\
 Luckily, [VCGI](http://vcgi.vermont.gov) has a LiDAR image service perfect for this type of investigation. Dave Allen of [old-maps.com](http://old-maps.com) was happy to provide a high-res scan of the image, and I quickly got to work, georeferencing the historic map and comparing it to the image service. Here's a comparison of the historic map to today's LiDAR hillshade:\\
 \\
-[https://www.mappingvermont.org/projects/cambridgeport-mill-analysis/](https://www.mappingvermont.org/projects/cambridgeport-mill-analysis/)\\
+[https://www.mappingvermont.org/projects/cambridgeport-mill-analysis/](/projects/cambridgeport-mill-analysis/)\\
 \\
-Looking at the LiDAR data, I can't find much evidence for the old race way. The usual stone walls are visible, but no sign of a trench that follows what appears on the map. This [spooky skull-like formation](https://www.mappingvermont.org/projects/cambridgeport-mill-analysis/#19/43.15299/-72.55950) was the closest I found to any irregularity. I'd like to investigate this further, particularly the area where the canal begins near the saw mill. If I discover anything, you can find it here on MappingVermont! 
+Looking at the LiDAR data, I can't find much evidence for the old race way. The usual stone walls are visible, but no sign of a trench that follows what appears on the map. This [spooky skull-like formation](/projects/cambridgeport-mill-analysis/#19/43.15299/-72.55950) was the closest I found to any irregularity. I'd like to investigate this further, particularly the area where the canal begins near the saw mill. If I discover anything, you can find it here on MappingVermont!

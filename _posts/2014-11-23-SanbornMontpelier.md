@@ -16,4 +16,4 @@ I began by downloading all of Montpelier maps for 1915, the most recent year ava
 \\
 There you have it. After many challenges-- technological, historical, artistic, the web map is finally up. I've added some historical photographs too-- I think it makes the map a little more interactive. Please get in touch with questions/comments, especially if you're interested in collaborating on this work for another town in Vermont! Here's the final product:\\
 \\
-[Mapping Historic Montpelier](https://www.mappingvermont.org/projects/sanborn/montpelier)
+[Mapping Historic Montpelier](/projects/sanborn/montpelier)

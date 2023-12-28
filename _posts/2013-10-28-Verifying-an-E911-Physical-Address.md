@@ -15,4 +15,4 @@ Looking through these user-submitted physical addresses, however, there are all 
 \\
 And, 5+ months later, it works! Huzzah! Turns out that dynamically mapping 300,000 points is a little harder than initially realized. More on the technical stuff later, but in short, an autocomplete form passes the town name to a MySQL database of E911 points, returning a GeoJSON array of that towns points, which are mapped using Leaflet.js. Here it is:\\
 \\
-[http://mappingvermont.org/projects/e911/](http://mappingvermont.org/projects/e911/)  
+[http://mappingvermont.org/projects/e911/](/projects/e911/)
