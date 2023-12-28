@@ -32,44 +32,45 @@ function initializeTabletopObject() {
         // include marker clustering
         var markers = L.markerClusterGroup({disableClusteringAtZoom: 15});
 
+        $.getJSON("sanborn.json", function(srcJSON) {
+          for (var num = 0; num < srcJSON.length; num++) {
+              // Our table columns
+              var name = srcJSON[num].name;
+              var imageLink = srcJSON[num].imagelink;
+              console.log(imageLink);
+              var imageDescription = srcJSON[num].imagedescripton;
 
-        for (var num = 0; num < tabletopData.length; num++) {
-            // Our table columns
-            var name = tabletopData[num].name;
-            var imageLink = tabletopData[num].imagelink;
-            var imageDescription = tabletopData[num].imagedescripton;
+              // Pull in our lat, long information
+              var dataLat = srcJSON[num].latitude;
+              var dataLong = srcJSON[num].longitude;
 
-            // Pull in our lat, long information
-            var dataLat = parseFloat(tabletopData[num].latitude);
-            var dataLong = parseFloat(tabletopData[num].longitude);
+              // Add to our marker
+              marker_location = new L.latLng(dataLat, dataLong);
 
-            // Add to our marker
-            marker_location = new L.latLng(dataLat, dataLong);
+              // Create the marker
+              layer = new L.Marker(marker_location);
 
-            // Create the marker
-            layer = new L.Marker(marker_location);
+              // Create the popup
+              var divNode = document.createElement('DIV' + num);
+              var popup = "<div class='popup_box_header'><strong>" + name + "</strong></div>";
+              popup += "<hr />";
+              popup += "<img style='height:auto; width:auto; max-width:500px; max-height:500px;' src=" + imageLink + ">";
+              popup += "<hr />" + imageDescription;
 
-            // Create the popup
-            var divNode = document.createElement('DIV' + num);
-            var popup = "<div class='popup_box_header'><strong>" + name + "</strong></div>";
-            popup += "<hr />";
-            popup += "<img style='height:auto; width:auto; max-width:500px; max-height:500px;' src=" + imageLink + ">";
-            popup += "<hr />" + imageDescription;
+              // Add to our marker
 
-            // Add to our marker
+              divNode.innerHTML = popup
+              layer.bindPopup(divNode, {
+                  maxWidth: 800,
+                  autoPan: true
+              });
 
-            divNode.innerHTML = popup
-            layer.bindPopup(divNode, {
-                maxWidth: 800,
-                autoPan: true
-            });
-
-            // Add marker to our to map
-            // map.addLayer(layer)
-            markers.addLayer(layer)
-        }
-
-        map.addLayer(markers);
+              // Add marker to our to map
+              // map.addLayer(layer)
+              markers.addLayer(layer)
+          }
+          map.addLayer(markers);
+        });
 
         // initialize leaflet-hash
         var hash = new L.Hash(map);
